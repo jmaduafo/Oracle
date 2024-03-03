@@ -34,6 +34,9 @@ const config: Config = {
         '2xl': '1660px',
         // => @media (min-width: 1920px) { ... } 
       },
+      animation: {
+        'spin-smooth': 'spin 3.5s linear infinite',
+      }
       
     },
   },
