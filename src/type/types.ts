@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 type Socials = {
     spotify: string | null;
     twitter: string | null;
@@ -43,4 +45,11 @@ export type LatestReleaseProps = {
     manager: string;
     youtubeLink: string;
     artistImage: string;   
+}
+
+export type HeroImagesProps = {
+    image: StaticImageData;
+    alt: string;
+    rotate: string;
+    zIndex: string; 
 }
