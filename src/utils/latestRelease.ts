@@ -7,5 +7,6 @@ export const latestRelease: LatestReleaseProps = {
     producer: "IceBeatz",
     manager: "Rooney",
     youtubeLink: "",
-    artistImage: ""
+    // Landscape Image 
+    artistImage: "https://res.cloudinary.com/dyxxn831a/image/upload/v1709564064/oracle%20music/PHOTO-2024-02-25-18-40-50_n9g3wb.jpg"
 }
