@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.1",
     "@studio-freight/lenis": "^1.0.39",
     "framer-motion": "^11.0.8",
+    "heroicons": "^2.1.1",
     "lenis": "^0.0.2",
     "next": "14.1.1",
     "next-cloudinary": "^6.0.1",
