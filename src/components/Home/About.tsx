@@ -87,7 +87,7 @@ function About() {
       </section>
       {/* VIDEO ABOUT SECTION WITH COLOR DODGE BACKGROUND*/}
       <section>
-        <div className="relative sm:h-[40vh] md:h-[65vh] xl:[80vh] h-[30vh] overflow-hidden flex items-end">
+        <div className="relative mb-[8rem] sm:h-[40vh] md:h-[65vh] xl:[80vh] h-[30vh] overflow-hidden flex items-end">
           <video
             className="absolute w-full mix-blend-color"
             autoPlay

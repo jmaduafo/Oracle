@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
+import LatestRelease from "@/components/Home/LatestRelease";
 import React, { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
 
@@ -23,6 +24,7 @@ export default function Home() {
     <main className="">
       <Hero/>
       <About/>
+      <LatestRelease/>
     </main>
   );
 }
