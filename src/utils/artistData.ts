@@ -1,6 +1,6 @@
 import { ArtistProps } from "../type/types"
 
-const artists = [
+const artists: ArtistProps[] = [
     {
         artistName: "J Mula",
         desc: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula.',
@@ -39,6 +39,6 @@ const artists = [
 
 export const allArtists: object[] = []
 
-artists.forEach((item: ArtistProps, index: number) => {
+artists.forEach((item, index: number) => {
     allArtists.push({... item, id: index + 1})
 })

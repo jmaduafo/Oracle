@@ -53,3 +53,11 @@ export type HeroImagesProps = {
     rotate: string;
     zIndex: string; 
 }
+
+export type AboutImagesProps = {
+    image: StaticImageData;
+    alt: string;
+    width: string;
+    position: string;
+    zIndex: string;
+}
