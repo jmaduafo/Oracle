@@ -3,12 +3,41 @@ import { reverie } from "@/styles/fonts";
 import { motion, easeIn } from "framer-motion";
 import Link from "next/link";
 
-type Props = {
+type MenuProps = {
   readonly isMenuClicked: boolean;
   readonly setIsMenuClicked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function Menu({ isMenuClicked, setIsMenuClicked }: Props) {
+type NavProps = {
+  setIsMenuClicked: React.Dispatch<React.SetStateAction<boolean>>;
+  href: string;
+  title: string
+}
+
+function Menu({ isMenuClicked, setIsMenuClicked }: MenuProps) {
+  const navMenu = [
+    {
+      href: '/',
+      title: 'home'
+    },
+    {
+      href: '/#about',
+      title: 'about'
+    },
+    {
+      href: '/artists',
+      title: 'artists'
+    },
+    {
+      href: '/gallery',
+      title: 'gallery'
+    },
+    {
+      href: '/contact',
+      title: 'contact'
+    },
+  ]
+
   return (
     <motion.div
       initial={{ opacity: isMenuClicked ? 0 : 1 }}
@@ -18,24 +47,29 @@ function Menu({ isMenuClicked, setIsMenuClicked }: Props) {
       } duration-[.4s] sm:hidden w-screen h-screen fixed top-0 left-0 z-[50] flex justify-center items-center bg-background`}
     >
       <ul className="flex flex-col items-center xs:gap-0 gap-[.1rem]">
-        <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
-          <Link onClick={() => setIsMenuClicked(false)} href='/'>Home</Link>
-        </li>
-        <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
-          <Link onClick={() => setIsMenuClicked(false)} href='/#about'>About</Link>
-        </li>
-        <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
-          <Link onClick={() => setIsMenuClicked(false)} href='/artists'>Artists</Link>
-        </li>
-        <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
-          <Link onClick={() => setIsMenuClicked(false)} href='/gallery'>Gallery</Link>
-        </li>
-        <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
-          <Link onClick={() => setIsMenuClicked(false)} href='/contact'>Contact</Link>
-        </li>
+        {navMenu.map(nav => {
+          return (
+            <div key={nav.title}>
+              <NavLink 
+                setIsMenuClicked={setIsMenuClicked}
+                href={nav.href}
+                title={nav.title}
+              />
+            </div>
+          )
+        })}
       </ul>
     </motion.div>
   );
 }
 
 export default Menu;
+
+
+function NavLink({setIsMenuClicked, href, title} : NavProps) {
+  return (
+    <li className={`${reverie.className} text-text xs:text-[5rem] text-[4rem] uppercase`}>
+      <Link onClick={() => setIsMenuClicked(false)} href={href}>{title}</Link>
+    </li>
+  )
+}

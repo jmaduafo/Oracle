@@ -14,7 +14,7 @@ function About() {
       image: Picture1,
       alt: "scenic background with man on platform",
       width: "md:w-[24vw] w-[45vw]",
-      position: "md:top-[-10%] md:right-[10%]",
+      position: "md:top-[-5%] md:right-[10%]",
       zIndex: "z-[-1]",
     },
     {
@@ -28,7 +28,7 @@ function About() {
       image: Picture3,
       alt: "j mula in a max opening a red ring box",
       width: "md:w-[18vw] w-[35vw]",
-      position: "md:bottom-[30%] md:left-[30%]",
+      position: "md:bottom-[30%] md:left-[25%]",
       zIndex: "z-[-1]",
     },
     {
@@ -44,6 +44,7 @@ function About() {
     <>
       <section className="">
         <div className="relative md:w-[70%] h-[120vh] mb-[5rem] mx-auto my-0">
+          {/* SCROLLING ANIMATION FOR IMAGES */}
           <div className="">
             {images.map((img) => {
               return (
@@ -56,6 +57,7 @@ function About() {
               );
             })}
           </div>
+          {/* ABOUT INTRO TEXT WITH SHORT DESCRIPTION */}
           <div className="">
             <div className="flex items-center gap-6">
               <h5
@@ -100,6 +102,7 @@ function About() {
               type="video/mp4"
             />
           </video>
+          {/* MORE DETAILED PARAGRAPH */}
           <div className="px-10 pb-4">
             <SpinningStar size="40px" />
             <h4
