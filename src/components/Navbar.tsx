@@ -28,7 +28,7 @@ function Navbar() {
       title: "artists",
     },
     {
-      href: "/gallery",
+      href: "/#gallery",
       title: "gallery",
     },
     {
@@ -38,9 +38,8 @@ function Navbar() {
   ];
 
   return (
-    <div className="relative z-[90]">
-      <Menu isMenuClicked={isMenuClicked} setIsMenuClicked={setIsMenuClicked} />
-      <header>
+    <div className="relative">
+      <header className="sticky top-0 z-[90]">
         <nav
           className={`sm:px-[6rem] flex ${
             isMenuClicked ? "justify-end py-[50px]" : "justify-between py-5"
@@ -98,6 +97,7 @@ function Navbar() {
           </div>
         </nav>
       </header>
+      <Menu isMenuClicked={isMenuClicked} setIsMenuClicked={setIsMenuClicked} />
     </div>
   );
 }

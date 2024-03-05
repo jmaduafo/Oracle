@@ -9,10 +9,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
 
   return (
-    <div key={router.pathname} className={`${satoshiLight.className}`}>
+    <main key={router.pathname} className={`${satoshiLight.className}`}>
       <Navbar/>
       <Component {...pageProps} />
       <Footer/>
-    </div>
+    </main>
   )
 }
