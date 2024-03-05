@@ -11,7 +11,8 @@ const config: Config = {
       colors: {
         background: "#311C1C",
         text: "#FA9600",
-        accent: "#C9F479"
+        accent: "#C9F479",
+        text30: 'rgba(250, 150, 0, 0.3)'
       },
       screens: {
         'xxs': '0px',
@@ -36,6 +37,7 @@ const config: Config = {
       },
       animation: {
         'spin-smooth': 'spin 3.5s linear infinite',
+        'spin-slow': 'spin 5s linear infinite',
       }
       
     },

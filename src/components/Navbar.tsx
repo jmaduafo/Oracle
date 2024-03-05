@@ -90,7 +90,7 @@ function Navbar() {
                 );
               })}
             </ul>
-            <div className="relative flex items-center justify-center">
+            <div className="relative sm:flex hidden items-center justify-center">
               <div className="absolute z-[-1] animate-spin-smooth w-[6vw]">
                 <Image
                   src={TalkImage}

@@ -46,12 +46,12 @@ function Hero() {
   ]
 
   return (
-    <section className='h-screen'>
+    <section className='h-[85vh] overflow-y-hidden mb-[8rem]'>
       <div className='relative flex items-end justify-center h-[85vh] md:h-full'>
-        <div className='bg-white'>
+        <div className=''>
           {pictures.map(pic => {
             return (
-              <div className={`${pic.rotate} ${pic.zIndex} absolute transform top-[50%] md:top-[35%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[65vw] h-[70vhh] md:w-[25vw] md:h-[65vh] object-cover`} key={pic.rotate}>
+              <div className={`${pic.rotate} ${pic.zIndex} absolute transform top-[50%] md:top-[45%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[65vw] h-[70vhh] md:w-[25vw] md:h-[65vh] object-cover`} key={pic.rotate}>
                 <Image
                   src={pic.image}
                   alt={pic.alt}
@@ -62,7 +62,7 @@ function Hero() {
             )
           })}
         </div>
-        <h1 className={`${reverie.className} z-[10] text-[30vw] tracking-tighter text-center`}>ORACLE</h1>
+        <h1 className={`${reverie.className} z-[10] text-[30vw] tracking-tighter text-center mb-[-.35em]`}>ORACLE</h1>
       </div>
     </section>
   )
