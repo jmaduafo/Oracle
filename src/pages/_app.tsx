@@ -4,15 +4,18 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { satoshiLight } from '@/styles/fonts'
 import '../styles/globals.css'
+import { AnimatePresence } from 'framer-motion'
  
 export default function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
 
   return (
-    <main key={router.pathname} className={`${satoshiLight.className}`}>
-      <Navbar/>
-      <Component {...pageProps} />
-      <Footer/>
-    </main>
+    <AnimatePresence>
+        <main key={router.pathname} className={`${satoshiLight.className}`}>
+            <Navbar/>
+            <Component {...pageProps} />
+            <Footer/>
+        </main>
+    </AnimatePresence>
   )
 }

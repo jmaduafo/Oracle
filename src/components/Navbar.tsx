@@ -6,6 +6,8 @@ import logo from "../../public/images/mulaLogo.png";
 import Link from "next/link";
 import Menu from "./Menu";
 import { usePathname } from "next/navigation";
+import TalkImage from '../../public/images/letsTalk.png'
+import { reverie, satoshiRegular } from "@/styles/fonts";
 
 function Navbar() {
   const [isMenuClicked, setIsMenuClicked] = useState<boolean>(false);
@@ -56,7 +58,7 @@ function Navbar() {
               />
             </Link>
           </div>
-          <div>
+          <div className="flex items-center gap-[4rem]">
             <ul
               // ASSIGNS TRUE OR FALSE IF THE DIV IS HOVERED OVER
               onMouseEnter={() => setIsHovered(true)}
@@ -88,6 +90,17 @@ function Navbar() {
                 );
               })}
             </ul>
+            <div className="relative flex items-center justify-center">
+              <div className="absolute z-[-1] animate-spin-smooth w-[6vw]">
+                <Image
+                  src={TalkImage}
+                  alt='spinning radial text'
+                  placeholder="blur"
+                  className="w-full h-full"
+                  />
+              </div>
+              <h4 className={`${reverie.className} text-accent text-[3vw]`}>o</h4>
+            </div>
           </div>
           <div
             onClick={handleMenu}
