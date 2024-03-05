@@ -58,7 +58,7 @@ function Footer() {
   return (
     <footer className='px-6'>
       <div className='border-t-[1px] border-t-text30'>
-        <h5 className={`${reverie.className} text-center text-[8vw] mt-[12rem]`}>oracleofthugs@gmail.com</h5>
+        <h5 className={`${reverie.className} text-center text-[8vw] mt-[6rem] md:mt-[10rem]`}>oracleofthugs@gmail.com</h5>
         <div className='flex md:flex-row md:items-end md:gap-[4rem] flex-col-reverse'>
           <div className='md:basis-[75%]'>
             {/* PHONE NUMBER AND ADDRESS DETAILS */}
@@ -88,8 +88,8 @@ function Footer() {
               </div>
             </div>
             {/* ALL RIGHTS RESERVED AND NAV LINKS  */}
-            <div className='flex mt-5 mb-3 md:mb-2'>
-              <ul className='flex-[2.5] flex items-center gap-6'>
+            <div className='md:flex mt-5 mb-3 md:mb-2'>
+              <ul className='flex-[2.5] flex items-center md:justify-normal justify-center gap-8 md:pl-8'>
                 {navMenu.map(nav => {
                   return (
                     <li key={nav.title} className='text-[14px]'>
@@ -99,20 +99,20 @@ function Footer() {
                 })}
               </ul>
               <div className='flex-1'>
-                <p className='text-[14px]'>All Rights Reserved</p>
+                <p className='md:text-[14px] md:mt-0 mt-3 text-[12px] md:text-left text-center'>All Rights Reserved</p>
               </div>
             </div>
           </div>
           <div className='md:basis-[25%]'>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            <div className='relative flex items-center justify-center mt-[4rem] mb-[4rem]'>
-              <div className='absolute w-[15vw] object-cover animate-spin-slow'>
+            <p className='md:pl-0 pl-[7rem]'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            <div className='relative flex items-center justify-center md:my-[4rem] my-[2rem]'>
+              <div className='absolute md:w-[15vw] w-[13rem] object-cover animate-spin-slow'>
                 <Image
                   src={TalkImage}
                   alt='radial spinning text'
                   placeholder='blur'/>
               </div>
-              <h6 className={`${reverie.className} text-accent text-[7vw]`}>o</h6>
+              <h6 className={`${reverie.className} text-accent md:text-[7vw] text-[7rem]`}>o</h6>
             </div>
           </div>
         </div>
