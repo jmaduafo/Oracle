@@ -88,7 +88,7 @@ function Footer() {
               </div>
             </div>
             {/* ALL RIGHTS RESERVED AND NAV LINKS  */}
-            <div className='md:flex mt-5 mb-3 md:mb-2'>
+            <div className='md:flex mt-5 mb-3 md:mb-5'>
               <ul className='flex-[2.5] flex items-center md:justify-normal justify-center gap-8 md:pl-8'>
                 {navMenu.map(nav => {
                   return (
