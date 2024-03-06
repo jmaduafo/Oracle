@@ -5,6 +5,7 @@ import About from "@/components/Home/About";
 import LatestRelease from "@/components/Home/LatestRelease";
 import React, { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
+import Artists from "@/components/Home/Artists";
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Hero/>
       <About/>
       <LatestRelease/>
+      <Artists/>
     </div>
   );
 }

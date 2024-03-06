@@ -25,7 +25,8 @@ type Singles = {
     spotifyEmbedded: string;
 }
 
-export type ArtistProps = {
+export interface ArtistProps {
+    id: number;  
     artistName: string;
     desc: string;
     artistTitles: string[];
@@ -34,7 +35,16 @@ export type ArtistProps = {
     eps: EPs[];
     singles: Singles[];
     landscapeImage: string;
-    portraitImage: string    
+    portraitImage: string;
+}
+
+export interface HomeArtistProps { 
+    artistName: string;
+    artistTitles: string[];
+    albums: Albums[];
+    eps: EPs[];
+    singles: Singles[];
+    portraitImage: string;
 }
 
 export type LatestReleaseProps = {

@@ -1,6 +1,6 @@
 import { ArtistProps } from "../type/types"
 
-const artists: ArtistProps[] = [
+const artists = [
     {
         artistName: "J Mula",
         desc: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula.',
@@ -33,12 +33,12 @@ const artists: ArtistProps[] = [
             }
         ],
         landscapeImage: '',
-        portraitImage: '' 
+        portraitImage: 'https://res.cloudinary.com/dyxxn831a/image/upload/v1709734958/oracle%20music/PHOTO-2024-02-25-18-40-48_-_Copy_2_ucerzk.jpg' 
     }
 ]
 
-export const allArtists: object[] = []
+export let allArtists : ArtistProps[] = []
 
-artists.forEach((item, index: number) => {
+artists.forEach((item, index) => {
     allArtists.push({... item, id: index + 1})
 })
