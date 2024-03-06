@@ -44,7 +44,13 @@ export interface HomeArtistProps {
     albums: Albums[];
     eps: EPs[];
     singles: Singles[];
-    portraitImage: string;
+    landscapeImage: string;
+}
+
+export type Cursor = { 
+    x: number;
+    y: number;
+    isHovered: boolean;
 }
 
 export type LatestReleaseProps = {

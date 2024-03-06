@@ -32,7 +32,7 @@ const artists = [
                 spotifyEmbedded: 'string'
             }
         ],
-        landscapeImage: '',
+        landscapeImage: 'https://res.cloudinary.com/dyxxn831a/image/upload/v1709735499/oracle%20music/mula-landscape_etnmky.jpg',
         portraitImage: 'https://res.cloudinary.com/dyxxn831a/image/upload/v1709734958/oracle%20music/PHOTO-2024-02-25-18-40-48_-_Copy_2_ucerzk.jpg' 
     }
 ]
