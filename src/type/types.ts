@@ -77,3 +77,12 @@ export type AboutImagesProps = {
     position: string;
     zIndex: string;
 }
+
+export type GalleryImagesProps = {
+    id: number;
+    image: StaticImageData;
+}
+
+export type GalleryProps = {
+    image: StaticImageData;
+}

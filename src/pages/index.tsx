@@ -1,12 +1,12 @@
 // 'use client'
-import Image from "next/image";
+import React, { useEffect } from 'react'
 import Hero from "@/components/Home/Hero";
 import About from "@/components/Home/About";
 import LatestRelease from "@/components/Home/LatestRelease";
-import React, { useEffect } from 'react'
-import Lenis from '@studio-freight/lenis'
 import Artists from "@/components/Home/Artists";
 import Gallery from "@/components/Home/Gallery";
+
+import Lenis from '@studio-freight/lenis'
 
 export default function Home() {
 

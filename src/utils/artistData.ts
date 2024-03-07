@@ -1,5 +1,6 @@
 import { ArtistProps } from "../type/types"
 
+// CAN BE MODIFIED
 const artists = [
     {
         artistName: "J Mula",
@@ -37,8 +38,12 @@ const artists = [
     }
 ]
 
+
+// DO NOT MODIFY
 export let allArtists : ArtistProps[] = []
 
 artists.forEach((item, index) => {
     allArtists.push({... item, id: index + 1})
 })
+
+// DO NOT MODIFY

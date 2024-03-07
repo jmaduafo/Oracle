@@ -1,8 +1,11 @@
 import React from 'react'
+import AllArtists from '@/components/Artists/AllArtists'
 
 function Artists() {
   return (
-    <div>Artist</div>
+    <main>
+      <AllArtists/>
+    </main>
   )
 }
 
