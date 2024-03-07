@@ -7,7 +7,7 @@ import Cover from "../Cover";
 function AllArtists() {
   return (
     <section>
-      <div>
+      <div className="mb-[4rem]">
         <h1
           className={`${reverie.className} text-[12vw] tracking-tight text-center`}
         >

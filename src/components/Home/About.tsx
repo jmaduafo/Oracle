@@ -42,7 +42,7 @@ function About() {
 
   return (
     <>
-      <section className="">
+      <section className="" id='about'>
         <div className="relative md:w-[70%] h-[120vh] mb-[5rem] mx-auto my-0">
           {/* SCROLLING ANIMATION FOR IMAGES */}
           <div className="">

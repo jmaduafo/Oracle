@@ -37,7 +37,7 @@ function Artists() {
           })}
         </div>
         {/* ARTISTS SECTION BUTTON WITH ARROW */}
-        <div className="flex justify-center items-center mt-[5rem]">
+        <div className="flex justify-center items-center mt-[5rem]" id='gallery'>
           <Link href='/artists'>
             <div className="px-6 py-2 flex items-center cursor-pointer gap-8 w-fit rounded-[30px] border-[1.5px] border-accent group hover:bg-accent duration-[.4s]">
               <button

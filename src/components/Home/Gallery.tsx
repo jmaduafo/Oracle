@@ -6,7 +6,7 @@ import InstagramIcon from '../../../public/socials/icons8-instagram-50.png'
 
 function Gallery() {  
   return (
-    <div className='relative mt-[8rem] mb-[4rem] group'>
+    <section className='relative mt-[8rem] mb-[4rem] group'>
       <a href='https://instagram.com' target='_blank'>
         <Cover rounded={false}>
             <Image
@@ -31,7 +31,7 @@ function Gallery() {
           )
         })}
       </div>
-    </div>
+    </section>
   )
 }
 
