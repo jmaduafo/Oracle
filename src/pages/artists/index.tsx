@@ -3,9 +3,9 @@ import AllArtists from '@/components/Artists/AllArtists'
 
 function Artists() {
   return (
-    <main>
+    <div>
       <AllArtists/>
-    </main>
+    </div>
   )
 }
 
