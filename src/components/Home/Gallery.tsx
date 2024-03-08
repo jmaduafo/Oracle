@@ -8,7 +8,7 @@ function Gallery() {
   return (
     <section className='relative mt-[8rem] mb-[4rem] group'>
       <a href='https://instagram.com' target='_blank'>
-        <Cover rounded={false}>
+        <Cover visible={false} rounded={false}>
             <Image
               src={InstagramIcon}
               alt='instagram logo'

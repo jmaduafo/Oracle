@@ -5,24 +5,36 @@ import { allArtists } from "@/utils/artistData";
 import { ArtistProps } from "@/type/types";
 import { usePathname } from "next/navigation";
 import CloudImage from "@/components/CloudImage";
+import Cover from "@/components/Cover";
 
 function ArtistPage() {
   const router = useRouter();
   const { artistName } = router.query;
+  
+  const { push } = useRouter();
+
   const pathname = usePathname();
 
-  const [artistInfo, setArtistsInfo] = useState<ArtistProps | undefined | null>(
+  const [artistInfo, setArtistInfo] = useState<ArtistProps | undefined | null>(
     null
   );
 
   useEffect(
     function () {
-      setArtistsInfo(
+      setArtistInfo(
         allArtists.find((artist) => artist.artistName === artistName)
       );
-      console.log(artistInfo);
     },
     [pathname]
+  );
+
+  useEffect(
+    function () {
+      if (artistInfo === undefined) {
+        push('/not-found')
+      }
+    },
+    [artistInfo]
   );
 
   if (artistInfo === null) {
@@ -31,19 +43,22 @@ function ArtistPage() {
 
   return (
     <>
-      {artistInfo ? (
+      {artistInfo && (
         <section className="h-[90vh]">
-          <CloudImage
-            image={artistInfo.landscapeImage}
-            width={1920}
-            height={1080}
-            alt={`${artistInfo.artistName}`}
-            className="w-full h-full absolute top-0 left-0 z-[-1]"
-          />
-          <div></div>
+          {/* BACKGROUND IMAGE AND COVER */}
+          <div className="w-full h-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${artistInfo.landscapeImage})`}}></div>
+          <Cover visible rounded={false}>
+          {''}
+          </Cover>
+          {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION DIV */}
+          <div>
+
+          </div>
+          {/* ARTIST ABLUMS, EPs, AND SINGLES  */}
+          <div>
+
+          </div>
         </section>
-      ) : (
-        <p>Artists not found</p>
       )}
     </>
   );

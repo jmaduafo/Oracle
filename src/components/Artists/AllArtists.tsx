@@ -22,7 +22,7 @@ function AllArtists() {
                     style={{ backgroundImage: `url(${artist.portraitImage})` }}
                     >
                     <Link href={`/artists/${artist.artistName}`}>
-                        <Cover rounded>
+                        <Cover visible={false} rounded>
                             <p className={`${satoshiRegular.className} text-white uppercase text-[20px]`}>{artist.artistName}</p>
                         </Cover>
                     </Link> 
