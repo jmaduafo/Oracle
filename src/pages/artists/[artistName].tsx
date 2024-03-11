@@ -14,9 +14,13 @@ function ArtistPage() {
   const { push } = useRouter();
 
   const pathname = usePathname();
+  const artistSplit = pathname?.split('/')[2]?.split('%20')?.join(' ')
 
   const [artistInfo, setArtistInfo] = useState<ArtistProps | undefined | null>(
     null
+  );
+  const [artist, setArtist] = useState(
+    artistSplit
   );
 
   useEffect(
@@ -28,18 +32,14 @@ function ArtistPage() {
     [pathname]
   );
 
-  useEffect(
-    function () {
-      if (artistInfo === undefined) {
-        push('/not-found')
-      }
-    },
-    [artistInfo]
-  );
-
-  if (artistInfo === null) {
-    return <p>Loading...</p>;
-  }
+  // useEffect(
+  //   function () {
+  //     if (artist === artistName && artistInfo === undefined) {
+  //       push('/not-found')
+  //     }
+  //   },
+  //   [artistInfo]
+  // );
 
   return (
     <>
