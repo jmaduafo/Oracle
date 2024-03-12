@@ -18,7 +18,7 @@ function TransitionCarousel() {
                     </div>
                 )
             })}
-            <div className='w-[35vw] h-[100px] rounded-xl object-cover object-top'>
+            <div className='w-[35vw] md:h-[150px] h-[80px] rounded-xl object-cover object-top'>
                 <Image
                     src={Picture}
                     alt='sky during sunset'
@@ -32,6 +32,16 @@ function TransitionCarousel() {
                     </div>
                 )
             })}
+            <div className='w-[35vw] md:h-[150px] h-[80px] rounded-xl object-cover object-top'>
+                <Image
+                    src={Picture}
+                    alt='sky during sunset'
+                    placeholder='blur'
+                    className='w-full h-full rounded-full'/>
+            </div>
+        </div>
+        <div>
+            
         </div>
     </section>
   )
