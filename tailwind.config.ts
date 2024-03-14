@@ -39,6 +39,13 @@ const config: Config = {
       animation: {
         'spin-smooth': 'spin 3.5s linear infinite',
         'spin-slow': 'spin 5s linear infinite',
+        'element-disappear': 'disappear 3s ease-in infinite forwards'
+      },
+      keyframes: {
+        disappear: {
+          '0%, 100%': { opacity: '0' },
+          '50%': { opacity: '1' },
+        }
       }
       
     },

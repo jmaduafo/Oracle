@@ -50,7 +50,9 @@ export interface HomeArtistProps {
 export type Cursor = { 
     x: number;
     y: number;
-    isHovered: boolean;
+    isHovered?: boolean;
+    children: React.ReactNode,
+    className: string
 }
 
 export type LatestReleaseProps = {
