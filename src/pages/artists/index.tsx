@@ -1,12 +1,12 @@
 import React from 'react'
 import AllArtists from '@/components/Artists/AllArtists'
-import TransitionCarousel from '@/components/Artists/TransitionCarousel'
+import Transition from '@/components/Artists/Transition'
 
 function Artists() {
   return (
     <div>
       <AllArtists/>
-      <TransitionCarousel/>
+      <Transition/>
     </div>
   )
 }

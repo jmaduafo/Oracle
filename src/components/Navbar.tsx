@@ -57,14 +57,13 @@ function Navbar() {
     <div className="relative">
       <header className="sticky top-0 z-[90]">
         <nav
-          className={`sm:px-[6rem] flex ${
+          className={`md:px-[6rem] px-[30px] flex ${
             isMenuClicked ? "justify-end py-[50px]" : "justify-between py-5"
-          } items-center px-[30px] py-5`}
+          } items-center py-5`}
         >
-          <div className="flex items-center gap-9">
+          <div className={`${isMenuClicked ? "hidden" : "block"} duration-[.4s] flex items-center md:gap-9 gap-4`}>
             {/* HOME ORACLE LOGO */}
             <div
-              className={`${isMenuClicked ? "hidden" : "block"} duration-[.4s]`}
             >
               <Link href={"/"}>
                 <Image
@@ -91,7 +90,7 @@ function Navbar() {
                   // ASSIGNS TRUE OR FALSE IF THE DIV IS HOVERED OVER
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
-                  className="sm:flex items-center gap-8 hidden"
+                  className="md:flex items-center gap-8 hidden"
                 >
                   {navMenu.map((nav) => {
                     return (
@@ -119,7 +118,7 @@ function Navbar() {
               })}
             </ul>
             {/* SPINNING ANIMATION IMAGE */}
-            <div className="relative sm:flex hidden items-center justify-center">
+            <div className="relative md:flex hidden items-center justify-center">
               <div className="absolute z-[-1] animate-spin-smooth w-[6vw]">
                 <Image
                   src={TalkImage}
@@ -133,7 +132,7 @@ function Navbar() {
           </div>
           <div
             onClick={handleMenu}
-            className="sm:hidden flex flex-col gap-[5px] cursor-pointer z-[90]"
+            className="md:hidden flex flex-col gap-[5px] cursor-pointer z-[90]"
           >
             <MenuBars isMenuClicked={isMenuClicked} />
           </div>
