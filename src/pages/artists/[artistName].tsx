@@ -9,8 +9,6 @@ import ArtistsWorks from "@/components/ArtistDetail/ArtistsWorks";
 import SpotifyEmbed from "@/components/ArtistDetail/SpotifyEmbed";
 import { reverie, satoshiMedium } from "@/styles/fonts";
 import SpinningStar from "@/components/SpinningStar";
-import Instagram from '../../../public/socials/icons8-instagram-50.png'
-import TikTok from '../../../public/socials/icons8-tiktok-50.png'
 import { SocialIcon } from 'react-social-icons'
 
 function ArtistPage() {  
@@ -28,6 +26,9 @@ function ArtistPage() {
   const [artistInfo, setArtistInfo] = useState<ArtistProps | undefined | null>(
     null
     );
+  // const [artistIndex, setArtistIndex] = useState<number | null>(
+  //   null
+  //   );
     
     const [artist, setArtist] = useState(artistSplit);
     
@@ -50,9 +51,10 @@ function ArtistPage() {
         setArtistInfo(
           allArtists.find((artist) => artist.artistName === artistName)
           );
-        },
+
+        },          
         [pathname]
-        );
+      );
         
     function socialsIcon(social: string, href: string) {
       if (social.toLowerCase() === 'spotify') {
@@ -87,7 +89,7 @@ function ArtistPage() {
             {""}
           </Cover>
           {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION CONTAINER */}
-          <div className="z-[10] px-[6rem] flex justify-between gap-10 mt-[4rem]">
+          <div className="z-[10] px-[6rem] flex justify-between gap-10 mt-[5rem]">
             {/* SPOTIFY EMBEDDED LOGIC */}
             <SpotifyEmbed
               isSpotifyOpen={isSpotifyOpen}
@@ -135,6 +137,7 @@ function ArtistPage() {
               selectedCollectionArray={selectedCollectionArray}
               setSelectedCollectionArray={setSelectedCollectionArray}
               artistInfo={artistInfo}
+              setArtistInfo={setArtistInfo}
             />
           </div>
         </section>

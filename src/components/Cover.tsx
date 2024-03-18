@@ -9,7 +9,7 @@ function Cover({ children, rounded, visible }: { children: React.ReactNode, roun
     <motion.div
         initial={{ opacity: visible ? 1 : 0 }}
         whileHover={{ opacity: 1, transition: { duration: 0.3, ease: easing } }}
-        className={`absolute ${rounded ? 'rounded-full' : 'rounded-none'} top-0 left-0 bg-background30 w-full h-full flex justify-center items-center z-[8] ${visible ? 'visible' : 'invisible'} group-hover:visible`}
+        className={`absolute ${rounded ? 'rounded-full' : 'rounded-none'} top-0 left-0 bg-background40 w-full h-full flex justify-center items-center z-[8] ${visible ? 'visible' : 'invisible'} group-hover:visible`}
         >
             {children}
     </motion.div>

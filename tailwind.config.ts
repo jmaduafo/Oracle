@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         background: "#311C1C",
         background30: "rgba(49, 28, 28, .3)",
+        background40: "rgba(49, 28, 28, .4)",
         text: "#FA9600",
         accent: "#C9F479",
         text30: 'rgba(250, 150, 0, 0.3)'
