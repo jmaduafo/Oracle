@@ -20,21 +20,21 @@ const artists = [
             {
                 name: 'string',
                 image: 'string',
-                spotifyEmbedded: 'string'
+                spotifyEmbedded: 'albums'
             }
         ],
         eps: [
             {
                 name: 'string',
                 image: 'string',
-                spotifyEmbedded: 'string'
+                spotifyEmbedded: 'eps'
             }
         ],
         singles: [
             {
                 name: 'string',
                 image: 'string',
-                spotifyEmbedded: 'string'
+                spotifyEmbedded: 'singles'
             }
         ],
         landscapeImage: 'https://res.cloudinary.com/dyxxn831a/image/upload/v1709831073/oracle%20music/mula1_sd8rt5.jpg',

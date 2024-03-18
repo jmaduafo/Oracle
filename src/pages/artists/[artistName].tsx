@@ -40,7 +40,7 @@ function ArtistPage() {
     const [spotifyEmbed, setSpotifyEmbed] = useState<Collections | null>(null);
     
     // The collection of Singles, EPs, or Albums based on the selection
-    const [selectedImagesArray, setSelectedImagesArray] = useState<
+    const [selectedCollectionArray, setSelectedCollectionArray] = useState<
     Collections[] | null | undefined
     >(null);
     
@@ -86,18 +86,20 @@ function ArtistPage() {
           <Cover visible rounded={false}>
             {""}
           </Cover>
-          {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION DIV */}
+          {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION CONTAINER */}
           <div className="z-[10] px-[6rem] flex justify-between gap-10 mt-[4rem]">
+            {/* SPOTIFY EMBEDDED LOGIC */}
             <SpotifyEmbed
               isSpotifyOpen={isSpotifyOpen}
               setIsSpotifyOpen={setIsSpotifyOpen}
             />
             <div className="flex items-end gap-8">
+              {/* ARTIST INFO WITH ARTIST NAME, TITLES, AND DESCRIPTION */}
               <div className="max-w-[35vw]">
                 <h6 className={`${reverie.className} uppercase text-[6vw] leading-[.8]`}>{artistInfo.artistName}</h6>
                 <div className="pl-[5rem]">
                   <div className="flex items-center gap-5">
-                    {artistInfo.artistTitles.map((title, index) => {
+                    {artistInfo && artistInfo.artistTitles.map((title, index) => {
                       return (
                         <Fragment key={title}>
                           <p className={`${satoshiMedium.className} text-[50px]`}>{title}</p>
@@ -110,11 +112,12 @@ function ArtistPage() {
                       )
                     })}
                   </div>
-                  <p className="">{artistInfo.desc}</p>
+                  <p className="">{artistInfo && artistInfo.desc}</p>
                 </div>
               </div>
+              {/* ARTIST SOCIAL ICONS AND LINKS */}
               <div className="flex flex-col">
-                {artistInfo.socials.map(social => {
+                {artistInfo && artistInfo.socials.map(social => {
                   return (
                     <Fragment key={social.social}>
                       {socialsIcon(social.social, social.link)}
@@ -129,6 +132,9 @@ function ArtistPage() {
             <ArtistsWorks
               activeSelect={activeSelect}
               setActiveSelect={setActiveSelect}
+              selectedCollectionArray={selectedCollectionArray}
+              setSelectedCollectionArray={setSelectedCollectionArray}
+              artistInfo={artistInfo}
             />
           </div>
         </section>
