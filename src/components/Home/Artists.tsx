@@ -100,7 +100,7 @@ function ArtistContainer({
           className="md:w-[120px] md:h-[120px] w-[90px] h-[90px] bg-white"
         >
           <ArrowUpRightIcon
-            className="md:w-12 md:h-12 w-9 h-9 animate-element-disappear"
+            className="md:w-12 md:h-12 w-9 h-9"
             color="#FA9600"
             strokeWidth={1.5}
           />

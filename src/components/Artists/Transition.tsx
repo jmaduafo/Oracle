@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { satoshiMedium, satoshiBold } from "@/styles/fonts";
 import Image from "next/image";
 import Picture from "../../../public/images/misc2.jpg";
-import Picture2 from "../../../public/images/test1.jpg";
+import Picture2 from "../../../public/images/misc4.gif";
 import CustomCursor from "../CustomCursor";
 import Link from "next/link";
 
@@ -71,9 +71,9 @@ function Transition() {
                     x={x}
                     y={y}
                     isHovered={isHovered}
-                    className="p-3 md:w-[120px] md:h-[120px] w-[90px] h-[90px] border-[4px] border-accent bg-white"
+                    className="p-3 md:w-[120px] md:h-[120px] w-[90px] h-[90px] bg-white"
                     >
-                    <p className={`${satoshiMedium.className} text-accent sm:text-[22px] text-[18px] text-center leading-[1] tracking-tighter`}>HOLLA AT US</p>
+                    <p className={`${satoshiMedium.className} text-text sm:text-[22px] text-[18px] text-center leading-[1] tracking-tighter`}>HOLLA AT US</p>
                 </CustomCursor>
             </div>
         </Link>
@@ -87,7 +87,7 @@ function Transition() {
           </p>
         </div>
         <div className="flex-[2] object-cover object-bottom sm:pr-0 pr-[4rem]">
-          <Image src={Picture2} alt="" className="w-full h-full rounded-xl" />
+          <Image src={Picture2} alt="" className="w-full h-full rounded-xl mix-blend-normal" />
         </div>
       </div>
     </section>
