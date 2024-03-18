@@ -1,25 +1,11 @@
 import { StaticImageData } from "next/image";
 
 type Socials = {
-    spotify: string | null;
-    twitter: string | null;
-    instagram: string | null;
-    tiktok: string | null
+    social: string,
+    link: string
 }
 
-type Albums = {
-    name: string;
-    image: string;
-    spotifyEmbedded: string;
-}
-
-type EPs = {
-    name: string;
-    image: string;
-    spotifyEmbedded: string;
-}
-
-type Singles = {
+export type Collections = {
     name: string;
     image: string;
     spotifyEmbedded: string;
@@ -30,10 +16,10 @@ export interface ArtistProps {
     artistName: string;
     desc: string;
     artistTitles: string[];
-    socials: Socials;
-    albums: Albums[];
-    eps: EPs[];
-    singles: Singles[];
+    socials: Socials[];
+    albums: Collections[];
+    eps: Collections[];
+    singles: Collections[];
     landscapeImage: string;
     portraitImage: string;
 }
@@ -41,9 +27,9 @@ export interface ArtistProps {
 export interface HomeArtistProps { 
     artistName: string;
     artistTitles: string[];
-    albums: Albums[];
-    eps: EPs[];
-    singles: Singles[];
+    albums: Collections[];
+    eps: Collections[];
+    singles: Collections[];
     landscapeImage: string;
 }
 

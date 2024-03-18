@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@studio-freight/lenis": "^1.0.39",
+    "boxicons": "^2.1.4",
     "framer-motion": "^11.0.8",
     "heroicons": "^2.1.1",
     "lenis": "^0.0.2",
@@ -18,7 +19,8 @@
     "next-cloudinary": "^6.0.1",
     "next-video": "^0.15.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-social-icons": "^6.15.0"
   },
   "devDependencies": {
     "@types/node": "^20",

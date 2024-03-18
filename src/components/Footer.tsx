@@ -83,7 +83,7 @@ function Footer() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onMouseMove={windowMouse}
-          className="hover:cursor-none"
+          className="hover:cursor-none hover:scale-[0.98] duration-[.4s]"
         >
           <h5
             className={`${reverie.className} text-center text-[8vw] mt-[6rem] md:mt-[10rem]`}

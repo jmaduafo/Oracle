@@ -6,12 +6,16 @@ const artists = [
         artistName: "J Mula",
         desc: 'Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula.',
         artistTitles: ['founder', 'rapper'],
-        socials: {
-            spotify: null,
-            twitter: null,
-            instagram: null,
-            tiktok: null
-        },
+        socials: [
+            {
+                social: 'spotify',
+                link: 'https://instagram.com/'
+            },
+            {
+                social: 'instagram',
+                link: 'https://instagram.com/'
+            },
+        ],
         albums: [
             {
                 name: 'string',
