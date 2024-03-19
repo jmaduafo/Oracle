@@ -8,7 +8,7 @@
     --orange-thumb: rgba(250, 150, 0, .8);
     --orange-track: rgba(250, 150, 0, .2);
     --neon-green: #C9F479;
-    --neon-green-thumb: rgba(201, 244, 121, .8);
+    --neon-green-thumb: rgba(201, 244, 121, .6);
     --neon-green-track: rgba(201, 244, 121, .2);
 }
 
@@ -51,4 +51,17 @@ body::-webkit-scrollbar-track {
     100% {
         transform: translateX(-50%)
     }
+}
+
+.collectionScroll::-webkit-scrollbar {
+    height: 3px;
+}
+
+.collectionScroll::-webkit-scrollbar-thumb {
+    background-color: var(--neon-green-thumb);
+    border-radius: 30px;
+}
+
+.collectionScroll::-webkit-scrollbar-track {
+    background-color: transparent;
 }

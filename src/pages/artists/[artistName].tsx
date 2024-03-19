@@ -79,7 +79,7 @@ function ArtistPage() {
   return (
     <>
       {artistInfo && (
-        <section className="h-[90vh] flex flex-col">
+        <section className="md:h-[90vh] flex flex-col">
           {/* BACKGROUND IMAGE AND COVER */}
           <div
             className="z-[-1] w-full h-full absolute top-0 left-0 bg-cover bg-center bg-no-repeat"
@@ -89,26 +89,26 @@ function ArtistPage() {
             {""}
           </Cover>
           {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION CONTAINER */}
-          <div className="z-[10] px-[6rem] flex justify-between gap-10 mt-[5rem]">
+          <div className="z-[10] md:px-[6rem] px-10 flex md:flex-row md:justify-between flex-col-reverse gap-10 mt-[5rem]">
             {/* SPOTIFY EMBEDDED LOGIC */}
             <SpotifyEmbed
               isSpotifyOpen={isSpotifyOpen}
               setIsSpotifyOpen={setIsSpotifyOpen}
             />
+            {/* ARTIST INFO WITH ARTIST NAME, TITLES, AND DESCRIPTION */}
             <div className="flex items-end gap-8">
-              {/* ARTIST INFO WITH ARTIST NAME, TITLES, AND DESCRIPTION */}
-              <div className="max-w-[35vw]">
-                <h6 className={`${reverie.className} uppercase text-[6vw] leading-[.8]`}>{artistInfo.artistName}</h6>
-                <div className="pl-[5rem]">
-                  <div className="flex items-center gap-5">
+              <div className="md:max-w-[40vw]">
+                <h6 className={`${reverie.className} uppercase md:text-[6vw] text-[5rem] leading-[.8]`}>{artistInfo.artistName}</h6>
+                <div className="md:pl-[5rem] pl-[1.5rem]">
+                  <div className="flex items-center gap-5 w-fit">
                     {artistInfo && artistInfo.artistTitles.map((title, index) => {
                       return (
                         <Fragment key={title}>
-                          <p className={`${satoshiMedium.className} text-[50px]`}>{title}</p>
+                          <p className={`${satoshiMedium.className} md:text-[50px] text-[36px]`}>{title}</p>
                           {
                             index !== artistInfo.artistTitles.length - 1 
                             &&
-                            <SpinningStar size={'30px'}/>
+                            <SpinningStar size='30px'/>
                           }
                         </Fragment>
                       )

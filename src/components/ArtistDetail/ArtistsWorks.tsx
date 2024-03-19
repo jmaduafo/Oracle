@@ -75,8 +75,8 @@ function ArtistsWorks({
         </div>
         {/* COLLECTIONS DISPLAY */}
         <div className="z-[10] flex items-center gap-6">
-          <div className="w-[40vw] rounded-2xl overflow-x-auto p-2">
-            <div className="w-fit flex flex-nowrap gap-2">
+          <div className="collectionScroll lg:w-[40vw] sm:w-[60vw] w-[85vw] rounded-2xl overflow-x-auto p-2">
+            <div className="w-fit flex flex-nowrap gap-4">
               {[1, 2, 3, 4, 5, 6, 7].map(ele => {
                 return (
                   <div key={ele} className="w-[120px] h-[120px] bg-white rounded-xl"></div>
