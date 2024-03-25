@@ -38,7 +38,7 @@ function ArtistPage() {
     // Spotify Embed states
     const [isSpotifyOpen, setIsSpotifyOpen] = useState<boolean>(false);
     // Gets the clicked image and spotify embed of the album, single, or ep selected
-    const [spotifyEmbed, setSpotifyEmbed] = useState<Collections | null>(null);
+    const [spotifyEmbed, setSpotifyEmbed] = useState<string | null>(null);
     
     // The collection of Singles, EPs, or Albums based on the selection
     const [selectedCollectionArray, setSelectedCollectionArray] = useState<
@@ -89,11 +89,14 @@ function ArtistPage() {
             {""}
           </Cover>
           {/* SPOTIFY EMBEDDED AND ARTIST INFORMATION CONTAINER */}
-          <div className="z-[10] md:px-[6rem] px-10 flex md:flex-row md:justify-between flex-col-reverse gap-10 mt-[5rem]">
+          <div className="z-[10] md:px-[6rem] px-10 flex md:flex-row md:justify-between items-start flex-col-reverse gap-10 mt-[5rem]">
             {/* SPOTIFY EMBEDDED LOGIC */}
             <SpotifyEmbed
               isSpotifyOpen={isSpotifyOpen}
               setIsSpotifyOpen={setIsSpotifyOpen}
+              spotifyEmbed={spotifyEmbed}
+              setSpotifyEmbed={setSpotifyEmbed}
+              artistInfo={artistInfo}
             />
             {/* ARTIST INFO WITH ARTIST NAME, TITLES, AND DESCRIPTION */}
             <div className="flex items-end gap-8">
@@ -137,7 +140,8 @@ function ArtistPage() {
               selectedCollectionArray={selectedCollectionArray}
               setSelectedCollectionArray={setSelectedCollectionArray}
               artistInfo={artistInfo}
-              setArtistInfo={setArtistInfo}
+              setSpotifyEmbed={setSpotifyEmbed}
+              setIsSpotifyOpen={setIsSpotifyOpen}
             />
           </div>
         </section>

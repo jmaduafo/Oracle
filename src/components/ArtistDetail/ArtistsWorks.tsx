@@ -14,7 +14,9 @@ type Works = {
     React.SetStateAction<Collections[] | null | undefined>
   >;
   artistInfo: ArtistProps;
-  setArtistInfo: React.Dispatch<React.SetStateAction<ArtistProps | null | undefined>>;
+  // setArtistInfo?: React.Dispatch<React.SetStateAction<ArtistProps | null | undefined>>;
+  setSpotifyEmbed: React.Dispatch<React.SetStateAction<string | null>>;
+  setIsSpotifyOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function ArtistsWorks({
@@ -23,7 +25,8 @@ function ArtistsWorks({
   selectedCollectionArray,
   setSelectedCollectionArray,
   artistInfo,
-  setArtistInfo
+  setSpotifyEmbed,
+  setIsSpotifyOpen
 }: Works 
 ) {
 
@@ -77,12 +80,46 @@ function ArtistsWorks({
         <div className="z-[10] flex items-center gap-6">
           <div className="collectionScroll lg:w-[40vw] sm:w-[60vw] w-[85vw] rounded-2xl overflow-x-auto p-2">
             <div className="w-fit flex flex-nowrap gap-4">
-              {[1, 2, 3, 4, 5, 6, 7].map(ele => {
-                return (
-                  <div key={ele} className="w-[120px] h-[120px] bg-white rounded-xl"></div>
+              {activeSelect === 'Albums' && artistInfo.albums.length ?
+                artistInfo.albums.map(ele => {
+                  return (
+                    <div onClick={() => {setSpotifyEmbed(ele.spotifyEmbedded); setIsSpotifyOpen(true)}} key={ele.name} className="cursor-pointer w-[120px] h-[120px] bg-white rounded-xl">
+                      
+                    </div>
+                  )
+                })
+                :
+                (
+                  activeSelect === 'EPs' && artistInfo.eps.length ?
+                    artistInfo.eps.map(ele => {
+                      return (
+                        <div onClick={() => {setSpotifyEmbed(ele.spotifyEmbedded); setIsSpotifyOpen(true)}} key={ele.name} className="cursor-pointer w-[120px] h-[120px] bg-white rounded-xl"></div>
+                      )
+                    })
+                    :
+                    (
+                      activeSelect === 'Singles' && artistInfo.singles.length ?
+                        artistInfo.singles.map(ele => {
+                          return (
+                            <div onClick={() => {setSpotifyEmbed(ele.spotifyEmbedded); setIsSpotifyOpen(true)}} key={ele.name} className="cursor-pointer w-[120px] h-[120px] bg-white rounded-xl"></div>
+                          )
+                        })
+                        :
+                        <div className="h-[120px] w-[600px] flex justify-center items-center">
+                          <p className="z-[60] ">None available</p>
+                        </div>
+                        
+
+                    )
                 )
-              })}
+              }
             </div>
+            {/* {!artistInfo.singles.length || !artistInfo.albums.length || !artistInfo.eps.length 
+            && 
+            <div className="h-[120px] bg-white flex justify-center items-center">
+              <p className="z-[60] ">None available</p>
+            </div>
+            } */}
           </div>
         </div>
         {/* NEXT ARTIST BUTTON */}
