@@ -6,6 +6,7 @@
     --background: #311C1C;
     --orange: #fa9600;
     --orange-thumb: rgba(250, 150, 0, .8);
+    --orange60: rgba(250, 150, 0, .6);
     --orange-track: rgba(250, 150, 0, .2);
     --neon-green: #C9F479;
     --neon-green-thumb: rgba(201, 244, 121, .6);
@@ -64,4 +65,16 @@ body::-webkit-scrollbar-track {
 
 .collectionScroll::-webkit-scrollbar-track {
     background-color: transparent;
+}
+
+.placeholderForm::-moz-placeholder {
+    color: var(--orange60)
+}
+
+.placeholderForm::-webkit-input-placeholder {
+    color: var(--orange60);
+}
+
+.placeholderForm::placeholder {
+    color: var(--orange60)
 }
