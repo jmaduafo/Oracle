@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { satoshiRegular } from "@/styles/fonts";
+import { satoshiRegular, satoshiMedium } from "@/styles/fonts";
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Collections, ArtistProps } from "@/type/types";
@@ -106,7 +106,7 @@ function ArtistsWorks({
                         })
                         :
                         <div className="h-[120px] w-[600px] flex justify-center items-center">
-                          <p className="z-[60] ">None available</p>
+                          <p className={`${satoshiMedium.className}`}>None available</p>
                         </div>
                         
 
@@ -114,12 +114,6 @@ function ArtistsWorks({
                 )
               }
             </div>
-            {/* {!artistInfo.singles.length || !artistInfo.albums.length || !artistInfo.eps.length 
-            && 
-            <div className="h-[120px] bg-white flex justify-center items-center">
-              <p className="z-[60] ">None available</p>
-            </div>
-            } */}
           </div>
         </div>
         {/* NEXT ARTIST BUTTON */}

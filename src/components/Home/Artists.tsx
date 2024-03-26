@@ -83,6 +83,22 @@ function ArtistContainer({
     setY(e.clientY);
   }
 
+  const artistCollection = [
+    {
+      title: 'Album',
+      collection: albums
+    },
+    {
+      title: 'EP',
+      collection: eps
+    },
+    {
+      title: 'Single',
+      collection: singles
+    },
+
+  ]
+
   return (
     <Link href={`/artists/${artistName}`}>
       <div
@@ -113,17 +129,22 @@ function ArtistContainer({
               {artistName}
             </h4>
             <div className="flex items-center md:justify-start justify-center gap-3">
-              <p className="text-[20px]">
-                {albums.length} Album{SOrNoS(albums)}
-              </p>
-              <SpinningStar size="10px" />
-              <p className="text-[20px]">
-                {eps.length} EP{SOrNoS(eps)}
-              </p>
-              <SpinningStar size="10px" />
-              <p className="text-[20px]">
-                {singles.length} Single{SOrNoS(singles)}
-              </p>
+              {
+                artistCollection.map((artist, index) => {
+                  return (
+                    artist.collection.length ?
+                    <Fragment key={artist.title}>
+                      <p className="text-[20px]">
+                        {/* SOrNoS function adds an 's' after the string if the length of the collection is not equal to 1 */}
+                        {artist.collection.length} {artist.title}{SOrNoS(artist.collection)}
+                      </p>
+                      {index !== artistCollection.length - 1 ? <SpinningStar size="10px" /> : null}
+                    </Fragment>
+                    :
+                    null
+                  )
+                })
+              }
             </div>
           </div>
           <div className="flex items-center md:justify-start justify-center gap-6 mt-auto">
