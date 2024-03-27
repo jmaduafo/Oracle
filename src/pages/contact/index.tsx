@@ -40,7 +40,7 @@ function Contact() {
       innerText: 'Referral'
     },
     {
-      value: 'Join the team',
+      value: 'I want to join Oracle',
       innerText: 'I want to join Oracle'
     },
   ]
@@ -59,7 +59,7 @@ function Contact() {
     } else {
       setError('')
       setLoading(true)
-
+      
       try {
         await sendContactForm({
           name: name,
@@ -68,11 +68,8 @@ function Contact() {
           inquiryArtist: artist,
           message: message
         })
-        setLoading(false)
 
-        setTimeout(function() {
-          setSuccess('Message has been sent successfully!')
-        }, 3000)
+        setLoading(false)
 
         setName('')
         setEmail('')
@@ -80,9 +77,20 @@ function Contact() {
         setArtist('')
         setMessage('')
 
+        setSuccess('Message has been sent successfully!')
+
+        setTimeout(function() {
+          setSuccess('')
+        }, 5000)
+
       } catch (err: any) {
         setError(err.message)
         setLoading(false)
+
+        setTimeout(function() {
+          setError('')
+        }, 5000)
+        
       }
 
     }
@@ -167,8 +175,8 @@ function Contact() {
             {/* SUBMIT BUTTON */}
             {loading ?
             <div className='flex justify-center items-center mt-8'>
-              <button type='submit' className={`group cursor-not-allowed hover:text-background hover:bg-accent duration-[.4s] flex justify-center items-center gap-10 px-8 py-1 border-[1.5px] border-accent rounded-full opacity-55`}>
-                <span className='border-[4px] border-white animate-spin-slow'></span>
+              <button type='submit' className={`group cursor-not-allowed duration-[.4s] flex justify-center items-center gap-10 px-10 py-2 border-[1.5px] border-accent rounded-full`}>
+                <span className='border-[3px] border-[#ffffff30] border-b-white animate-spin w-[30px] h-[30px] rounded-full'></span>
               </button>
             </div>  
             :

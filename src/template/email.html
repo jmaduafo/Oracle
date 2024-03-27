@@ -77,30 +77,30 @@
         tbody {
             background-color: white;
             padding: 30px;
+            width: 100%;
         }
 
         .content {
             width: 70%;
             margin: 5rem auto;
-            display: flex;
+            /* display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 30px; */
+            
             border: 1px solid rgb(44, 43, 43, .3);
             border-radius: 20px;
             padding: 30px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .content tr {
+        .content td {
             width: 70%;
-            margin: 0 auto;
+            margin: 10px auto;
+            display: flex;
         }
 
-        .content td {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
+        .content td p:first-child {
+            margin-right: 40px;
         }
 
         tfoot {
@@ -143,7 +143,7 @@
                     </tr>
                 </tr>
                 <tr class="content">
-                    <!-- <td class="">
+                    <td class="">
                         <p>Name:</p>
                         <p>Nicholas</p>
                     </td>
@@ -166,7 +166,7 @@
                     <td class="">
                         <p>Email:</p>
                         <p>jmaduafokwa@gmail.com</p>
-                    </td> -->
+                    </td>
                 </tr>
             </tbody>
             <tfoot></tfoot>
