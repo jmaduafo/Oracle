@@ -41,7 +41,7 @@ function Contact() {
     },
     {
       value: 'Join the team',
-      innerText: 'Want to join Oracle'
+      innerText: 'I want to join Oracle'
     },
   ]
 
