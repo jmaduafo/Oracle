@@ -3,6 +3,7 @@ import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import { satoshiMedium, reverie } from '@/styles/fonts'
 import { allArtists } from '@/utils/artistData'
 import SpinningStar from '@/components/SpinningStar'
+import { sendContactForm } from '@/lib/api'
 
 function Contact() {
   // Name, email,  type of booking, message
@@ -13,6 +14,8 @@ function Contact() {
   const [ message, setMessage ] = useState('')
 
   const [ error, setError ] = useState('')
+  const [ success, setSuccess ] = useState('')
+  const [ loading, setLoading ] = useState(false)
 
 
   const select = [
@@ -44,7 +47,7 @@ function Contact() {
 
   const emailRegex = /[a-z0-9\._%+!$&*=^|~#%'`?{}/\-]+@([a-z0-9\-]+\.){1,}([a-z]{2,16})/
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     if (!name.length || !email.length || !message.length) {
@@ -55,6 +58,33 @@ function Contact() {
       setError('An option must be selected')
     } else {
       setError('')
+      setLoading(true)
+
+      try {
+        await sendContactForm({
+          name: name,
+          email: email,
+          inquiryType: bookingType,
+          inquiryArtist: artist,
+          message: message
+        })
+        setLoading(false)
+
+        setTimeout(function() {
+          setSuccess('Message has been sent successfully!')
+        }, 3000)
+
+        setName('')
+        setEmail('')
+        setBookingType('')
+        setArtist('')
+        setMessage('')
+
+      } catch (err: any) {
+        setError(err.message)
+        setLoading(false)
+      }
+
     }
   }
 
@@ -80,6 +110,14 @@ function Contact() {
             {error.length ?
             <div className='flex items-center justify-between rounded-xl border-[1px] border-accent px-6 py-3 mb-6'>
               <p className='text-white'>{error}</p>
+              <SpinningStar size={'20px'}/>
+            </div>
+            :
+            null
+            }
+            {success.length ?
+            <div className='flex items-center justify-between rounded-xl border-[1px] border-accent px-6 py-3 mb-6'>
+              <p className='text-white'>{success}</p>
               <SpinningStar size={'20px'}/>
             </div>
             :
@@ -127,12 +165,22 @@ function Contact() {
               <textarea placeholder='Send a Message *' id='formMessage' rows={4} className='placeholderForm text-[14px] px-3 py-2 outline-none border-b-white border-b-[1.5px] bg-transparent' onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
             </div>
             {/* SUBMIT BUTTON */}
+            {loading ?
             <div className='flex justify-center items-center mt-8'>
-              <button type='submit' className={`group hover:text-background hover:bg-accent duration-[.4s] flex justify-between items-center gap-10 px-8 py-1 border-[1.5px] border-accent rounded-full uppercase text-[22px] text-white`}>
-                Submit
-                <ArrowRightIcon className='w-6 text-white transform duration-[.4s] group-hover:text-background group-hover:translate-x-[10px]'/>
+              <button type='submit' className={`group cursor-not-allowed hover:text-background hover:bg-accent duration-[.4s] flex justify-center items-center gap-10 px-8 py-1 border-[1.5px] border-accent rounded-full opacity-55`}>
+                <span className='border-[4px] border-white animate-spin-slow'></span>
               </button>
             </div>  
+            :
+            <div className='flex justify-center items-center mt-8'>
+              <button type='submit' className={`group hover:text-background hover:bg-accent duration-[.4s] flex justify-between items-center gap-10 px-8 py-1 border-[1.5px] border-accent rounded-full uppercase text-[22px] text-white`}>
+                <>
+                  Submit
+                  <ArrowRightIcon className='w-6 text-white transform duration-[.4s] group-hover:text-background group-hover:translate-x-[10px]'/>
+                </>
+              </button>
+            </div>  
+            }
           </form>
         </div>
       </div>

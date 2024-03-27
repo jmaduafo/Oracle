@@ -1,5 +1,13 @@
 import { StaticImageData } from "next/image";
 
+export type ContactForm = {
+    name: string;
+    email: string;
+    inquiryType: string;
+    inquiryArtist: string;
+    message: string;
+}
+
 type Socials = {
     social: string,
     link: string
@@ -74,3 +82,4 @@ export type GalleryImagesProps = {
 export type GalleryProps = {
     image: StaticImageData;
 }
+
